@@ -79,7 +79,7 @@ class TablaLL1:
         self.agregar(
             "ELOL",
             "|",
-            ["|", "EL2", "ELOL"]
+            ["|", "EL2", "{OR}", "ELOL"]
         )
 
         # ELOL -> ε
@@ -121,7 +121,7 @@ class TablaLL1:
         self.agregar(
             "EL2L",
             "&",
-            ["&", "ENOT", "EL2L"]
+            ["&", "ENOT", "{AND}", "EL2L"]
         )
 
         self.agregar(
@@ -147,7 +147,7 @@ class TablaLL1:
         self.agregar(
             "ENOT",
             "!",
-            ["!", "ENOT"]
+            ["!", "ENOT", "{NOT}"]
         )
 
         self.agregar(
@@ -181,47 +181,37 @@ class TablaLL1:
         self.agregar(
             "ERL",
             "<",
-            ["<", "E"]
+            ["<", "E", "{MENOR}"]
         )
-
-        # ERL -> > E
 
         self.agregar(
             "ERL",
             ">",
-            [">", "E"]
+            [">", "E", "{MAYOR}"]
         )
-
-        # ERL -> <= E
 
         self.agregar(
             "ERL",
             "<=",
-            ["<=", "E"]
+            ["<=", "E", "{MENORIGUAL}"]
         )
-
-        # ERL -> >= E
 
         self.agregar(
             "ERL",
             ">=",
-            [">=", "E"]
+            [">=", "E", "{MAYORIGUAL}"]
         )
-
-        # ERL -> == E
 
         self.agregar(
             "ERL",
             "==",
-            ["==", "E"]
+            ["==", "E", "{IGUAL}"]
         )
-
-        # ERL -> != E
 
         self.agregar(
             "ERL",
             "!=",
-            ["!=", "E"]
+            ["!=", "E", "{DIFERENTE}"]
         )
 
         self.agregar(
@@ -267,7 +257,7 @@ class TablaLL1:
         self.agregar(
             "EP",
             "+",
-            ["+", "T", "EP"]
+            ["+", "T", "{SUMA}", "EP"]
         )
 
         # EP -> - T EP
@@ -275,7 +265,7 @@ class TablaLL1:
         self.agregar(
             "EP",
             "-",
-            ["-", "T", "EP"]
+            ["-", "T", "{RESTA}", "EP"]
         )
 
         # EP -> ε
@@ -359,13 +349,13 @@ class TablaLL1:
         self.agregar(
             "TP",
             "*",
-            ["*", "P", "TP"]
+            ["*", "P", "{MULT}", "TP"]
         )
 
         self.agregar(
             "TP",
             "/",
-            ["/", "P", "TP"]
+            ["/", "P", "{DIV}", "TP"]
         )
 
         # TP -> ε
@@ -461,7 +451,7 @@ class TablaLL1:
         self.agregar(
             "PP",
             "^",
-            ["^", "P"]
+            ["^", "P", "{POT}"]
         )
 
         self.agregar(
